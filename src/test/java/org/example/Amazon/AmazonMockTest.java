@@ -66,7 +66,7 @@ class AmazonMockTest {
         double totalPrice = amazon.calculate();
 
         assertThat(totalPrice).isEqualTo(0.0);
-        verify(shoppingCart).getItems();
+        verify(shoppingCart, times(2)).getItems();
     }
 
     @Test
