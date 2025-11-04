@@ -16,13 +16,18 @@ class ShoppingCartAdaptorIntegrationTest {
 
     @BeforeEach
     void setUp() {
+        if (database != null) {
+            database.close();
+        }
         database = new Database();
+        database.resetDatabase();
         shoppingCart = new ShoppingCartAdaptor(database);
     }
 
     @AfterEach
     void tearDown() {
         if (database != null) {
+            database.resetDatabase();
             database.close();
         }
     }

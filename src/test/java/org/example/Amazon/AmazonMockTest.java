@@ -13,6 +13,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.anyList;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -51,7 +52,7 @@ class AmazonMockTest {
         double totalPrice = amazon.calculate();
 
         assertThat(totalPrice).isEqualTo(15.0);
-        verify(shoppingCart).getItems();
+        verify(shoppingCart, times(2)).getItems();
         verify(priceRule1).priceToAggregate(mockItems);
         verify(priceRule2).priceToAggregate(mockItems);
     }

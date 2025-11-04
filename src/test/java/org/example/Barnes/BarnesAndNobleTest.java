@@ -78,7 +78,7 @@ class BarnesAndNobleTest {
         private final Map<String, Book> books = new HashMap<>();
 
         SimpleBookDatabase() {
-            books.put("1234567890", new Book("1234567890", 25, 10));
+            books.put("1234567890", new Book("1234567890", 25, 5));
             books.put("0987654321", new Book("0987654321", 30, 5));
         }
 
